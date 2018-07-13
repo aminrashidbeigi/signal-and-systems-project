@@ -12,22 +12,30 @@ B = A .* Y2;
 B_FFT = fft(B);
 N = (0:L)*Fs2/L;
 
-subplot(5, 1, 1);
+filtered = filter(f1000, 1, B);
+filtered_FFT = fft(filtered);
+
+subplot(6, 1, 1);
 plot(T,Y1);
 title('X');
 
-subplot(5, 1, 2);
+subplot(6, 1, 2);
 plot(T,Y2);
 title('P');
 
-subplot(5, 1, 3);
+subplot(6, 1, 3);
 plot(N,abs(A_FFT));
 title('Amplitude of FFT(A)');
 
-subplot(5, 1, 4);
-plot(T,B);
-title('C');
-
-subplot(5, 1, 5);
+subplot(6, 1, 4);
 plot(N,abs(B_FFT));
 title('Amplitude of FFT(C)');
+
+T2 = (0:100);
+subplot(6, 1, 5);
+plot(T2,B(200:300));
+title('C');
+
+subplot(6, 1, 6);
+plot(T2,filtered(200:300));
+title('Filtered of C');

@@ -5,3 +5,4 @@ T=(0:L)/Fs2;
 Y = 5*sin(2*pi*T*F1);
 
 plot(T,Y);
+title('X');

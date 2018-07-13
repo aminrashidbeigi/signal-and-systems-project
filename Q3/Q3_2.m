@@ -12,9 +12,12 @@ N = (0:L)*Fs2/L;
 
 subplot(3, 1, 1);
 plot(T,Y1);
+title('X');
 
 subplot(3, 1, 2);
 plot(T,Y2);
+title('P');
 
 subplot(3, 1, 3);
 plot(N,abs(A_FFT));
+title('Amplitude of FFT(A)');
