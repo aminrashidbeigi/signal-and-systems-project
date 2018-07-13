@@ -17,17 +17,22 @@ filtered_FFT = fft(filtered);
 
 subplot(5, 1, 1);
 plot(T,Y);
+title('Y');
 
 subplot(5, 1, 2);
 plot(T,Y);
 hold on;
 stem(T, Y);
+title('Sampled Y');
 
 subplot(5, 1, 3);
 plot(N, abs(fftshift(Y_FFT)));
+title('Amplitude of FFT(Y)');
 
 subplot(5, 1, 4);
 plot(T, filtered);
+title('Filtered Y');
 
 subplot(5, 1, 5);
 plot(N, abs(fftshift(filtered_FFT)));
+title('Amplitude of FFT(Filtered Y)');
